@@ -11,7 +11,8 @@ exporters:
 
 processors:
   - gomod: go.opentelemetry.io/collector/processor/batchprocessor v0.72.0
-  - gomod: github.com/eojeah/otelcol/collector/processor/spanattributeprocessor v0.72.0
+  - gomod: github.com/eojeah/otelcol/collector/processor/spanattributeprocessor v0.0.0
+    path: "/Users/eojeah/go/src/ocbCustomCollector/collector/processor/spanattributeprocessor"
 
 receivers:
   - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.72.0
