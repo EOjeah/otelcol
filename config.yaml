@@ -5,6 +5,8 @@ receivers:
   zipkin:
 
 processors:
+  spanattributeprocessor:
+    os_type: "linux"
 
 exporters:
   logging:
@@ -18,5 +20,5 @@ service:
   pipelines:
     traces:
       receivers: [otlp, zipkin]
-      processors: []
+      processors: [spanattributeprocessor]
       exporters: [logging, jaeger]

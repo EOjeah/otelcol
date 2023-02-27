@@ -1,31 +1,34 @@
-package spanattributeprocessor
+package spanattributeprocessor // import github.com/eojeah/otelcol/collector/processor/spanattributeprocessor
 
 import (
 	"context"
+
 	"go.opentelemetry.io/collector/component"
-	"go.opentelemetry.io/collector/config"
 	"go.opentelemetry.io/collector/consumer"
+	"go.opentelemetry.io/collector/processor"
 )
 
 const (
 	typeStr       = "spanattributeprocessor"
 	defaultOsType = "linux"
+	stability     = component.StabilityLevelDevelopment
 )
 
-func createDefaultConfig() config.Processor {
+var processorCapabilities = consumer.Capabilities{MutatesData: true}
+
+func createDefaultConfig() component.Config {
 	return &Config{
-		ProcessorSettings: config.NewProcessorSettings(config.NewComponentID(typeStr)),
-		OsType:            defaultOsType,
+		OsType: defaultOsType,
 	}
 }
 
-func createTracesProcessor(_ context.Context, params component.ProcessorCreateSettings, baseCfg config.Processor, consumer consumer.Traces) (component.TracesProcessor, error) {
+func createTracesProcessor(_ context.Context, set processor.CreateSettings, cfg component.Config, nextConsumner consumer.Traces) (processor.Traces, error) {
 	return nil, nil
 }
 
-func NewFactory() component.ProcessorFactory {
-	return component.NewProcessorFactory(
+func NewFactory() processor.Factory {
+	return processor.NewFactory(
 		typeStr,
 		createDefaultConfig,
-		component.WithTracesProcessor(createTracesProcessor))
+		processor.WithTraces(createTracesProcessor, stability))
 }
