@@ -6,7 +6,6 @@ require (
 	go.opentelemetry.io/collector v0.72.0
 	go.opentelemetry.io/collector/component v0.72.0
 	go.opentelemetry.io/collector/consumer v0.72.0
-	go.opentelemetry.io/collector/pdata v1.0.0-rc6
 )
 
 require (
@@ -21,6 +20,7 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	go.opentelemetry.io/collector/confmap v0.72.0 // indirect
 	go.opentelemetry.io/collector/featuregate v0.72.0 // indirect
+	go.opentelemetry.io/collector/pdata v1.0.0-rc6 // indirect
 	go.opentelemetry.io/otel v1.13.0 // indirect
 	go.opentelemetry.io/otel/metric v0.36.0 // indirect
 	go.opentelemetry.io/otel/trace v1.13.0 // indirect

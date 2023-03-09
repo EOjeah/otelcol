@@ -1,4 +1,4 @@
-package spanattributeprocessor // import github.com/eojeah/otelcol/collector/processor/spanattributeprocessor
+package spanattributeprocessor
 
 import (
 	"context"
@@ -22,7 +22,7 @@ func createDefaultConfig() component.Config {
 	}
 }
 
-func createTracesProcessor(_ context.Context, set processor.CreateSettings, cfg component.Config, nextConsumner consumer.Traces) (processor.Traces, error) {
+func createTracesProcessor(_ context.Context, set processor.CreateSettings, cfg component.Config, nextConsumer consumer.Traces) (processor.Traces, error) {
 	return nil, nil
 }
 

@@ -1,4 +1,4 @@
-package spanattributeprocessor // import github.com/eojeah/otelcol/collector/processor/spanattributeprocessor
+package spanattributeprocessor
 
 import (
 	"errors"
